@@ -26,7 +26,7 @@
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -86,23 +86,6 @@
             </div>
         </section>
     </div>
-
-    <!-- Contact Section -->
-    <div id="contact" class="form-container mt-5">
-        <form id="contact-form">
-            <h2>Contact Us</h2>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your Name">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
-    </div>
     <br>
     <footer class="bg-light py-3">
         <div class="container text-center">
@@ -148,27 +131,6 @@
             fadeIns.forEach(fadeIn => {
                 observer.observe(fadeIn);
             });
-        });
-
-        // EmailJS integration
-        (function() {
-            emailjs.init('cJlczqleRxM74WUMm');
-        })();
-
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const serviceID = 'service_jtg490z'; 
-            const templateID = 'template_vot0kii'; 
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
-                    alert('Message sent successfully!');
-                    window.location.reload(); 
-                }, (err) => {
-                    alert('Failed to send message. Please try again.');
-                    console.error('Error:', err);
-                });
         });
     </script>
 </body>
